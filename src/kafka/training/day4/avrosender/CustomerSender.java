@@ -35,8 +35,8 @@ public class CustomerSender {
 
 		for (int i = 1; i <= 50; i++) {
 			GenericRecord customer = new GenericData.Record(schema);
-			customer.put("id", 1000+i);
-			customer.put("name", "Naveen-"+i);
+			customer.put("id", 10+i);
+			customer.put("name", "Naveen-"+(100+i));
 
 			ProducerRecord<String, GenericRecord> record = new ProducerRecord<>("customerTopic", "customer1", customer);
 			producer.send(record);
